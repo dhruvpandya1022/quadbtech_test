@@ -11,7 +11,6 @@ router.get('/storedata', (req, res) => {
         try {
             const data = response.data;
             // Iterate over each object in the data
-            // let counter = 0;
             await quad.deleteMany();
             for (const key in data) {
                 if (data.hasOwnProperty(key)) {
@@ -19,11 +18,7 @@ router.get('/storedata', (req, res) => {
 
                     // Save each object to MongoDB
                     await quad.create(objectData);
-                    counter++;
                 }
-                // if(counter >= 10) {
-                //     break;
-                // }
             }
 
             // await quad.insertMany(data);
