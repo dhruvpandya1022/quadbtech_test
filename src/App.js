@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Table from './components/Table';
+import image from './1637757772814.jpg';
+import EntryState from './context/EntryState';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-3 mb-2 bg-dark-subtle text-emphasis-dark">
+      <EntryState>
+        <Navbar/>
+        <img src={image} className="rounded mx-auto d-block m-2" alt="..."></img>
+        <Table/>
+      </EntryState>
     </div>
   );
 }
